@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Калькулятор раскроя ЛДСП — онлайн расчёт | АНКО Алматы</title>
+<meta name="description" content="Онлайн калькулятор раскроя ЛДСП. Введите размеры деталей — получите количество листов, количество пил и стоимость. Отправьте заявку в один клик.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<header class="header" id="header">
+  <div class="header-inner">
+    <a href="index.html" class="logo"><div class="logo-mark">А</div><div class="logo-text">АН<span>КО</span></div></a>
+    <button class="hamburger" id="hamburger" aria-label="Меню"><span></span><span></span><span></span></button>
+    <nav>
+      <div class="nav-item"><a class="nav-link" href="o-kompanii.html">О компании</a></div>
+      <div class="nav-item"><a class="nav-link" href="ldsp.html">ЛДСП</a></div>
+      <div class="nav-item"><a class="nav-link" href="blum.html">Фурнитура BLUM</a></div>
+      <div class="nav-item"><a class="nav-link" href="uslugi.html">Услуги</a></div>
+      <div class="nav-item"><a class="nav-link active" href="kalkulyator.html">Калькулятор</a></div>
+      <div class="nav-item"><a class="nav-link" href="kontakty.html">Контакты</a></div>
+    </nav>
+    <div class="header-actions">
+      <a class="btn-phone" href="tel:+77272336506">📞 +7 (727) 233-65-06</a>
+      <a class="btn-wa" href="https://wa.me/77772901402" target="_blank">💬 WhatsApp</a>
+    </div>
+  </div>
+</header>
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-logo"><div class="logo-mark">А</div><div class="logo-text">АН<span>КО</span></div></div>
+  <div class="drawer-nav"><a href="index.html">Главная</a><a href="ldsp.html">ЛДСП</a><a href="dekor.html">Декоры ЛДСП</a><a href="blum.html">Фурнитура BLUM</a><a href="uslugi.html">Услуги</a><a href="kalkulyator.html">Калькулятор</a><a href="kontakty.html">Контакты</a></div>
+  <div class="drawer-contacts"><a class="drawer-phone" href="tel:+77272336506">+7 (727) 233-65-06</a><a class="drawer-wa-btn" href="https://wa.me/77772901402" target="_blank">💬 WhatsApp</a></div>
+</div>
+
+<section class="hero-sm">
+  <div class="hero-sm-inner">
+    <div class="breadcrumb"><a href="index.html">Главная</a> / <span>Калькулятор раскроя</span></div>
+    <div class="hero-badge" style="margin-bottom:16px">🔢 Онлайн калькулятор раскроя ЛДСП</div>
+    <h1>Рассчитайте стоимость<br><span>раскроя за 2 минуты</span></h1>
+    <p>Введите список деталей с размерами — калькулятор посчитает количество листов ЛДСП, число пил и приблизительную стоимость.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="calc-wrapper">
+
+      <!-- НАСТРОЙКИ -->
+      <div class="calc-settings">
+        <div class="calc-settings-grid">
+          <div class="calc-field">
+            <label class="calc-label">Формат листа ЛДСП</label>
+            <select class="calc-select-full" id="sheetFormat">
+              <option value="2750x1830">2750 × 1830 мм (стандарт)</option>
+              <option value="2800x2070">2800 × 2070 мм (увеличенный)</option>
+              <option value="2500x1830">2500 × 1830 мм (Скиф)</option>
+            </select>
+          </div>
+          <div class="calc-field">
+            <label class="calc-label">Цена листа ЛДСП, ₸</label>
+            <select class="calc-select-full" id="ldspPrice">
+              <option value="3800">3 800 ₸ — Скиф 16 мм стандарт</option>
+              <option value="4200" selected>4 200 ₸ — Кроношпан 16 мм стандарт</option>
+              <option value="4700">4 700 ₸ — Кроношпан 18 мм</option>
+              <option value="5300">5 300 ₸ — Кроношпан 16 мм увеличенный</option>
+              <option value="5900">5 900 ₸ — Кроношпан 25 мм</option>
+            </select>
+          </div>
+          <div class="calc-field">
+            <label class="calc-label">Цена 1 пила, ₸</label>
+            <input class="calc-input-full" id="cutPrice" type="number" value="350" min="100" max="1000">
+          </div>
+        </div>
+      </div>
+
+      <!-- ЗАГОЛОВКИ ТАБЛИЦЫ -->
+      <div class="calc-header-row">
+        <span class="col-name">Название детали</span>
+        <span class="col-w">Ширина (мм)</span>
+        <span class="col-h">Длина (мм)</span>
+        <span class="col-qty">Кол-во</span>
+        <span class="col-edge">Кромка</span>
+        <span class="col-remove"></span>
+      </div>
+
+      <!-- СТРОКИ ДЕТАЛЕЙ -->
+      <div id="calcRows"></div>
+
+      <!-- КНОПКИ -->
+      <div class="calc-actions">
+        <button class="btn-add-row" onclick="addCalcRow()">+ Добавить деталь</button>
+        <button class="btn-calc" onclick="calculate()">🔢 Рассчитать</button>
+      </div>
+
+      <!-- РЕЗУЛЬТАТ -->
+      <div class="calc-result" id="calcResult">
+        <h3 style="font-size:20px;font-weight:700;margin-bottom:20px;color:var(--dark)">📊 Результат расчёта</h3>
+        <div class="calc-result-grid">
+          <div class="calc-res-card">
+            <div class="calc-res-label">Листов ЛДСП</div>
+            <div class="calc-res-val" id="resSheets">—</div>
+          </div>
+          <div class="calc-res-card">
+            <div class="calc-res-label">Количество пил</div>
+            <div class="calc-res-val" id="resCuts">—</div>
+          </div>
+          <div class="calc-res-card">
+            <div class="calc-res-label">Стоимость пил</div>
+            <div class="calc-res-val" id="resCostCuts">—</div>
+          </div>
+          <div class="calc-res-card highlight">
+            <div class="calc-res-label">Итого (лист + раскрой)</div>
+            <div class="calc-res-val" id="resCostTotal">—</div>
+          </div>
+        </div>
+        <div style="background:#fef9c3;border:1px solid #fde68a;border-radius:10px;padding:14px 18px;margin-top:16px;font-size:13px;color:#92400e">
+          ⚠️ Расчёт ориентировочный. Точная стоимость зависит от оптимизации раскроя, декора и актуальных цен на дату заказа.
+        </div>
+        <div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap">
+          <a class="btn-primary" id="waCalcLink" href="#" target="_blank">💬 Отправить заявку в WhatsApp</a>
+          <button class="btn-secondary" onclick="document.getElementById('calcResult').classList.remove('visible')">↩ Изменить</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ПОДСКАЗКИ -->
+    <div class="grid-3" style="margin-top:48px">
+      <div class="adv-card reveal">
+        <div class="adv-num">±0.5</div>
+        <div class="adv-label">мм точность</div>
+        <div class="adv-desc">Профессиональный форматно-раскроечный станок обеспечивает точность реза ±0.5 мм</div>
+      </div>
+      <div class="adv-card reveal" style="transition-delay:.07s">
+        <div class="adv-num">350 ₸</div>
+        <div class="adv-label">за 1 пил</div>
+        <div class="adv-desc">Включает оптимизацию раскроя. Минимальный заказ 5 000 ₸. Кромкование — отдельно.</div>
+      </div>
+      <div class="adv-card reveal" style="transition-delay:.14s">
+        <div class="adv-num">1–2</div>
+        <div class="adv-label">рабочих дня</div>
+        <div class="adv-desc">Стандартный срок изготовления. Срочный заказ — уточняйте наличие и стоимость.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section-alt">
+  <div class="section-inner">
+    <div class="section-header reveal"><div class="section-tag">Вопросы</div><h2>FAQ по раскрою</h2></div>
+    <div class="faq-list">
+      <div class="faq-item open"><button class="faq-q">Как правильно заполнить список деталей? <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-a">Укажите название (например, «Боковая стенка»), ширину и длину в миллиметрах, количество штук. Ориентация детали (горизонтально/вертикально) для текстурных декоров — укажите отдельно в WhatsApp при отправке заявки.</div></div>
+      <div class="faq-item"><button class="faq-q">Учитывает ли калькулятор текстуру декора? <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-a">Нет, калькулятор считает только площадь. Для текстурных декоров (дерево, камень) необходимо соблюдать направление волокна — это может увеличить количество листов. Наши мастера учитывают это при оптимизации.</div></div>
+      <div class="faq-item"><button class="faq-q">Что такое «кол-во пил» в результате? <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-a">Пил — один прямолинейный рез. Каждая деталь требует минимум 2 пила (по ширине и длине). Калькулятор считает 2 пила на деталь — реальное число зависит от оптимизации раскроя и может быть меньше.</div></div>
+      <div class="faq-item"><button class="faq-q">Принимаете чужой ЛДСП на раскрой? <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-a">Да, принимаем листы стороннего производителя на раскрой. Стоимость — от 350 ₸ за пил, минимум 5 000 ₸. Уточните наличие свободного времени станка заранее по телефону или WhatsApp.</div></div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="footer-inner"><div class="footer-top"><div><div class="footer-logo"><div class="footer-logo-mark">А</div><div class="footer-logo-text">АНКО</div></div><div class="footer-desc">Раскрой ЛДСП в Алматы. Точность ±0.5 мм.</div><a class="footer-wa-link" href="https://wa.me/77772901402" target="_blank">💬 +7 (777) 290-14-02</a></div><div class="footer-col"><h4>Сервис</h4><a href="uslugi.html">Раскрой ЛДСП</a><a href="uslugi.html#kromkovanie">Кромкование</a><a href="kalkulyator.html">Калькулятор</a></div><div class="footer-col"><h4>Материалы</h4><a href="ldsp.html">ЛДСП в Алматы</a><a href="blum.html">Фурнитура BLUM</a><a href="dekor.html">Декоры ЛДСП</a></div><div class="footer-col"><h4>Контакты</h4><a class="footer-phone" href="tel:+77272336506">+7 (727) 233-65-06</a></div></div><div class="footer-bottom"><div>© 2025 ТОО «АНКО»</div><div>anko.kz · Алматы</div></div></div></footer>
+<div class="mobile-bar"><a class="bar-phone" href="tel:+77272336506">📞 Позвонить</a><a class="bar-wa" href="https://wa.me/77772901402" target="_blank">💬 WhatsApp</a></div>
+<script src="js/main.js"></script>
+</body></html>

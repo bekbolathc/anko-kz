@@ -1,0 +1,31 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/ldsp", "destination": "/ldsp.html" },
+    { "source": "/blum", "destination": "/blum.html" },
+    { "source": "/uslugi", "destination": "/uslugi.html" },
+    { "source": "/dekor", "destination": "/dekor.html" },
+    { "source": "/kalkulyator", "destination": "/kalkulyator.html" },
+    { "source": "/kontakty", "destination": "/kontakty.html" },
+    { "source": "/o-kompanii", "destination": "/o-kompanii.html" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "X-XSS-Protection", "value": "1; mode=block" }
+      ]
+    },
+    {
+      "source": "/css/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    },
+    {
+      "source": "/js/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    }
+  ]
+}
