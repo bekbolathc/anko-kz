@@ -1,0 +1,10 @@
+{
+  "name": "anko-kz",
+  "version": "1.0.0",
+  "description": "АНКО — ЛДСП, фурнитура BLUM, раскрой в Алматы",
+  "scripts": {
+    "build": "echo 'Static site, no build needed'",
+    "dev": "npx serve ."
+  },
+  "private": true
+}
