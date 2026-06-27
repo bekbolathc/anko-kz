@@ -8,4 +8,5 @@
   <url><loc>https://anko.kz/kalkulyator</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://anko.kz/kontakty</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://anko.kz/o-kompanii</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://anko.kz/optovikam</loc><priority>0.85</priority><changefreq>monthly</changefreq></url>
 </urlset>
