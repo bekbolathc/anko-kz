@@ -9,7 +9,8 @@
     { "source": "/dekor", "destination": "/dekor.html" },
     { "source": "/kalkulyator", "destination": "/kalkulyator.html" },
     { "source": "/kontakty", "destination": "/kontakty.html" },
-    { "source": "/o-kompanii", "destination": "/o-kompanii.html" }
+    { "source": "/o-kompanii", "destination": "/o-kompanii.html" },
+    { "source": "/optovikam", "destination": "/optovikam.html" }
   ],
   "headers": [
     {

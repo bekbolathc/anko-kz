@@ -427,3 +427,104 @@ footer{background:var(--footer-bg);color:rgba(255,255,255,.7);padding:60px 40px 
   .hero h1{font-size:28px}
   .hero-stats{gap:20px}
 }
+
+/* ══ B2B / ОПТОВИКАМ PAGE ══════════════════════════════════ */
+
+/* Hero */
+.b2b-hero{background:var(--dark);padding:80px 40px;color:#fff}
+.b2b-hero-inner{max-width:1280px;margin:0 auto}
+.b2b-hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(37,211,102,.15);color:var(--green);font-size:13px;font-weight:700;padding:6px 14px;border-radius:100px;border:1px solid rgba(37,211,102,.3);margin-bottom:24px}
+.b2b-hero h1{font-size:48px;font-weight:800;line-height:1.1;margin-bottom:20px;color:#fff}
+.b2b-hero h1 span{color:var(--green)}
+.b2b-hero-sub{font-size:18px;color:rgba(255,255,255,.65);max-width:640px;line-height:1.6;margin-bottom:36px}
+.b2b-hero-ctas{display:flex;gap:12px;margin-bottom:48px;flex-wrap:wrap}
+.btn-ghost-dark{display:inline-flex;align-items:center;gap:6px;padding:14px 24px;border:1.5px solid rgba(255,255,255,.25);border-radius:12px;color:rgba(255,255,255,.85);font-size:15px;font-weight:600;text-decoration:none;transition:border-color .15s,color .15s}
+.btn-ghost-dark:hover{border-color:rgba(255,255,255,.6);color:#fff}
+.b2b-hero-stats{display:flex;align-items:center;gap:0;flex-wrap:wrap;gap:0}
+.b2b-stat{padding:0 32px}
+.b2b-stat:first-child{padding-left:0}
+.b2b-stat-val{font-size:28px;font-weight:800;color:#fff;line-height:1}
+.b2b-stat-label{font-size:12px;color:rgba(255,255,255,.45);margin-top:4px}
+.b2b-stat-sep{width:1px;height:40px;background:rgba(255,255,255,.15)}
+
+/* Client cards */
+.b2b-client-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:28px;transition:box-shadow .2s,transform .2s}
+.b2b-client-card:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
+.b2b-client-icon{font-size:36px;margin-bottom:16px}
+.b2b-client-card h3{font-size:16px;font-weight:700;color:var(--dark);margin-bottom:10px}
+.b2b-client-card p{font-size:13px;color:var(--muted);line-height:1.6}
+
+/* Benefit cards */
+.b2b-benefit-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:28px}
+.b2b-benefit-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:18px}
+.b2b-benefit-card h3{font-size:16px;font-weight:700;color:var(--dark);margin-bottom:10px}
+.b2b-benefit-card p{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:14px}
+.b2b-benefit-tag{display:inline-block;background:var(--bg);border:1px solid var(--border);border-radius:100px;font-size:11px;font-weight:700;color:var(--muted);padding:4px 10px;text-transform:uppercase;letter-spacing:.05em}
+
+/* Products list */
+.b2b-products{border:1px solid var(--border);border-radius:20px;overflow:hidden;background:#fff}
+.b2b-product-row{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:28px 32px;border-bottom:1px solid var(--border)}
+.b2b-product-left{display:flex;align-items:flex-start;gap:24px;flex:1}
+.b2b-product-num{font-size:32px;font-weight:900;color:var(--border);line-height:1;flex-shrink:0;min-width:40px}
+.b2b-product-row h3{font-size:17px;font-weight:700;color:var(--dark);margin-bottom:8px}
+.b2b-product-row p{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px}
+.b2b-product-tags{display:flex;flex-wrap:wrap;gap:6px}
+.b2b-tag{display:inline-block;background:var(--green-bg);color:var(--green-dark);font-size:11px;font-weight:600;padding:3px 10px;border-radius:100px}
+.b2b-product-link{flex-shrink:0;font-size:13px;font-weight:700;color:var(--green-dark);text-decoration:none;white-space:nowrap;padding:10px 18px;border:1.5px solid var(--green);border-radius:10px;transition:all .15s}
+.b2b-product-link:hover{background:var(--green);color:#fff}
+
+/* Form wrapper */
+.b2b-form-wrap{display:grid;grid-template-columns:1fr 1.5fr;gap:64px;align-items:start}
+.b2b-form-contact{display:flex;flex-direction:column;gap:16px;margin-top:8px}
+.b2b-form-contact-item{display:flex;align-items:center;gap:14px}
+.b2b-form-contact-icon{width:40px;height:40px;border-radius:10px;background:var(--green-bg);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.b2b-form-contact-label{font-size:11px;color:var(--muted);text-transform:uppercase;font-weight:700;letter-spacing:.05em;margin-bottom:2px}
+.b2b-form-contact-val{font-size:15px;font-weight:600;color:var(--dark);text-decoration:none}
+.b2b-form-contact-val:hover{color:var(--green)}
+
+/* Form itself */
+.b2b-form{background:#fff;border:1px solid var(--border);border-radius:20px;padding:36px;display:flex;flex-direction:column;gap:20px}
+.b2b-form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.b2b-form-field{display:flex;flex-direction:column;gap:6px}
+.b2b-form-label{font-size:12px;font-weight:700;color:var(--dark);text-transform:uppercase;letter-spacing:.05em}
+.req{color:#ef4444}
+.b2b-form-input,.b2b-form-select,.b2b-form-textarea{width:100%;padding:12px 14px;border:1.5px solid var(--border);border-radius:10px;font-size:14px;font-family:inherit;background:#fff;color:var(--dark);transition:border-color .15s;resize:none}
+.b2b-form-input:focus,.b2b-form-select:focus,.b2b-form-textarea:focus{outline:none;border-color:var(--green)}
+.b2b-form-input::placeholder,.b2b-form-textarea::placeholder{color:#bbb}
+
+/* Checkboxes */
+.b2b-checkboxes{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.b2b-checkbox{display:flex;align-items:center;gap:10px;cursor:pointer;font-size:14px;color:var(--text);user-select:none}
+.b2b-checkbox input{position:absolute;opacity:0;width:0;height:0}
+.b2b-checkbox-box{width:20px;height:20px;border:2px solid var(--border);border-radius:6px;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .15s;background:#fff}
+.b2b-checkbox input:checked ~ .b2b-checkbox-box{background:var(--green);border-color:var(--green)}
+.b2b-checkbox-box::after{content:'';width:6px;height:10px;border:2.5px solid #fff;border-top:none;border-left:none;transform:rotate(45deg) translateY(-1px);display:none}
+.b2b-checkbox input:checked ~ .b2b-checkbox-box::after{display:block}
+
+/* Messages */
+.b2b-form-msg{padding:14px 16px;border-radius:10px;font-size:14px;line-height:1.5}
+.b2b-form-msg--error{background:#fef2f2;color:#dc2626;border:1px solid #fecaca}
+.b2b-form-msg--success{background:var(--green-bg);color:#166534;border:1px solid #bbf7d0}
+
+/* Submit */
+.btn-b2b-submit{width:100%;padding:16px;background:var(--green);color:#fff;font-size:16px;font-weight:700;border:none;border-radius:12px;cursor:pointer;font-family:inherit;transition:background .15s;display:flex;align-items:center;justify-content:center;gap:8px}
+.btn-b2b-submit:hover{background:var(--green-dark)}
+.b2b-form-note{font-size:11px;color:var(--muted);text-align:center;line-height:1.5;margin-top:-4px}
+
+/* Responsive B2B */
+@media(max-width:1024px){
+  .b2b-hero h1{font-size:36px}
+  .b2b-form-wrap{grid-template-columns:1fr;gap:40px}
+}
+@media(max-width:768px){
+  .b2b-hero{padding:56px 20px}
+  .b2b-hero h1{font-size:28px}
+  .b2b-hero-sub{font-size:15px}
+  .b2b-stat{padding:0 16px}
+  .b2b-stat-val{font-size:22px}
+  .b2b-product-row{flex-direction:column;align-items:flex-start;gap:16px}
+  .b2b-product-link{align-self:flex-start}
+  .b2b-form{padding:24px}
+  .b2b-form-row{grid-template-columns:1fr}
+  .b2b-checkboxes{grid-template-columns:1fr}
+}
